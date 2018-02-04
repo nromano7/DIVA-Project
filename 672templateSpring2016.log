@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.2.4)  4 FEB 2018 14:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.2.4)  4 FEB 2018 16:45
 entering extended mode
 **./672templateSpring2016.tex
 (672templateSpring2016.tex
@@ -721,15 +721,16 @@ Package grfext Info: Graphics extension search list:
 (grfext)             [.pdf,.jpeg,.png,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
-ABD: EveryShipout initializing macros (Stage1.tex
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 11.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 11.
- [1{C:/Users/Wael/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
+ABD: EveryShipout initializing macros (Stage1.tex [1{C:/Users/Wael/AppData/Loca
+l/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
-]) (Stage2.tex) (Stage3.tex) (Stage4.tex
+]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 12.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 12.
+) (Stage2.tex) (Stage3.tex) (Stage4.tex
 [2]) ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\.tex" File ignored)
 
 ** Conference Paper **
@@ -746,20 +747,20 @@ Before submitting the final camera ready copy, remember to:
 
 ] (672templateSpring2016.aux) ) 
 Here is how much of TeX's memory you used:
- 16324 strings out of 493312
- 342898 string characters out of 3138903
+ 16323 strings out of 493312
+ 342891 string characters out of 3138903
  420834 words of memory out of 3000000
  19564 multiletter control sequences out of 15000+200000
- 36288 words of font info for 65 fonts, out of 3000000 for 9000
+ 35192 words of font info for 64 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,8n,67p,989b,269s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,8n,67p,1994b,267s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/bas
 e/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
 <C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files
 /MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/font
 s/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times
 /utmri8a.pfb>
-Output written on 672templateSpring2016.pdf (3 pages, 64957 bytes).
+Output written on 672templateSpring2016.pdf (3 pages, 66341 bytes).
 PDF statistics:
  36 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
