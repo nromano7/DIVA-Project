@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.2.4)  4 FEB 2018 16:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.2.4)  4 FEB 2018 17:31
 entering extended mode
 **./672templateSpring2016.tex
 (672templateSpring2016.tex
@@ -749,18 +749,18 @@ Before submitting the final camera ready copy, remember to:
 Here is how much of TeX's memory you used:
  16323 strings out of 493312
  342891 string characters out of 3138903
- 420834 words of memory out of 3000000
+ 419834 words of memory out of 3000000
  19564 multiletter control sequences out of 15000+200000
  35192 words of font info for 64 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,8n,67p,1994b,267s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,8n,67p,1994b,248s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/bas
 e/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
 <C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files
 /MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/font
 s/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times
 /utmri8a.pfb>
-Output written on 672templateSpring2016.pdf (3 pages, 66341 bytes).
+Output written on 672templateSpring2016.pdf (3 pages, 66983 bytes).
 PDF statistics:
  36 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
