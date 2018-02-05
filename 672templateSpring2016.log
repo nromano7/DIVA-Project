@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.2.4)  4 FEB 2018 17:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.2.4)  5 FEB 2018 18:26
 entering extended mode
 **./672templateSpring2016.tex
 (672templateSpring2016.tex
@@ -730,8 +730,25 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 12.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 12.
-) (Stage2.tex) (Stage3.tex) (Stage4.tex
-[2]) ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\.tex" File ignored)
+) (Stage2.tex
+<Data_Structures.png, id=12, 395.076pt x 313.17pt>
+File: Data_Structures.png Graphic file (type png)
+<use Data_Structures.png>
+Package pdftex.def Info: Data_Structures.png  used on input line 4. on input li
+ne 4.
+Package pdftex.def Info: Requested size: 252.0pt x 199.7591pt on input line 4.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 9--111
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--111
+
+ []
+
+(Stage3.tex) (Stage4.tex [2 <./Data_Structures.png>])
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\.tex" File ignored)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -747,10 +764,10 @@ Before submitting the final camera ready copy, remember to:
 
 ] (672templateSpring2016.aux) ) 
 Here is how much of TeX's memory you used:
- 16323 strings out of 493312
- 342891 string characters out of 3138903
- 419834 words of memory out of 3000000
- 19564 multiletter control sequences out of 15000+200000
+ 16331 strings out of 493312
+ 343025 string characters out of 3138903
+ 419842 words of memory out of 3000000
+ 19570 multiletter control sequences out of 15000+200000
  35192 words of font info for 64 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,8n,67p,1994b,248s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -760,9 +777,9 @@ e/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
 /MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/font
 s/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times
 /utmri8a.pfb>
-Output written on 672templateSpring2016.pdf (3 pages, 66983 bytes).
+Output written on 672templateSpring2016.pdf (3 pages, 74897 bytes).
 PDF statistics:
- 36 PDF objects out of 1000 (max. 8388607)
+ 37 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 18 words of extra memory for PDF output out of 10000 (max. 10000000)
 
