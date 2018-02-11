@@ -1,0 +1,26 @@
+The goal for this project by the end of the semester is to have four views, one for each user type, where each view functionally shows course requests at its respective stage, along with the Visual Transcript display that the user can interact with. 
+
+There will be four types of users in the system: students, professors, secretaries, and graduate school administrators. Each user type also corresponds to a "stage" in the approval process. Stage 1 is when a student creates a course request, which initiates the approval process. Stage 2 is when a request requires approval from a professor, Stage 3 is when the request gets forwarded from a professor and requires approval from a secretary,  and Stage 4 is when a request gets forwarded from a secretary and requires approval from a graduate school administrator. Once Stage 4 is complete, the student's request becomes approved, and an SPN is issued to that student. Each of these users will have one view that corresponds to them, where they will be in charge of their corresponding approval stage. 
+
+An example scenario would be as follows:
+\\
+Student A is an undergraduate student who wishes to take CS526: Data Interaction and Visual Analytics, a graduate computer science course. Student A logs into GCRS, where he then creates a course request for CS526 [Stage 1]. The lecturer for CS526 is Professor James Abello. The professor then logs into GCRS, where Student A's course request is listed on his view [Stage 2]. The professor selects Student A's request, which then calls an instance of Visual Transcript for Student A's course history. Visual Transcript shows Student A's course history, as well as the corresponding grades he received for each course, sorted by completion time. After inspecting the Visual Transcript instance, the professor hits the Approve button, which forwards Student A's request to the graduate secretary. The secretary logs into GCRS, where Student A's course request is listed on her view [Stage 3]. Again, Student A's request is selected, which brings up a Visual Transcript instance. The secretary notices that two other students have also requested CS526, but she can only issue one SPN. She selects CS526, which displays an instance of Visual Transcript that sorts the three students by expected graduation date. Student A will be graduating the soonest out of the three. The secretary selects Student A's requests and approves it. The system detects that Student A requires a prerequisite override for CS526. The approval automatically gets forwarded to a graduate school administrator. An admin logs into GCRS, where Student A's course request is listed on his view [Stage 4]. Again, the course request is selected, which spawns another Visual Transcript instance. The professor instructs the Visual Transcript instance to sort Student A's course history by course difficulty. The administrator inspects the transcript and is satisfied. Then he hits Approve, which automatically sends Student A an SPN, which will allow him to register for CS526. 
+
+A tentative timeline for project completion is as follows:
+
+\begin{itemize} 
+	\item{\textbf{Feb 15:} A dummy database for use for this project will be generated and prepared for use.} 
+	
+	\item{\textbf{Mar 1:} A prototype Visual Transcript view will be ready.}
+	
+	\item{\textbf{Mar 15:} A fully functional Visual Transcript instance will be functional.}
+	
+	\item{\textbf{Mar 29:} A system view will be completed for a generic user type. The view will contain a list of requests, the Visual Transcript, as well as any appropriate command buttons like "Approve" and "Deny."}
+	
+	\item{\textbf{Apr 12:} All four system views will be completed, as well as a temporary system login for each of the four user types.}
+	
+	\item{\textbf{Apr 19:} The powerpoint presentation will be completed.}
+	
+	\item{\textbf{Apr 26:} The project report will be completed.}
+	
+\end{itemize}
