@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.2.4)  12 FEB 2018 18:00
+=======
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2018.2.7)  12 FEB 2018 18:25
+>>>>>>> ec8e6f1967ac8264a3f48f60172b7736adc9d3b0
 entering extended mode
 **./526_project_report_main.tex
 (526_project_report_main.tex
@@ -720,8 +724,38 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 Package grfext Info: Graphics extension search list:
 (grfext)             [.pdf,.jpeg,.png,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
+<<<<<<< HEAD
 )
 ABD: EveryShipout initializing macros (Abstract.tex) (Project_Description.tex)
+=======
+
+(c:/texlive/2017/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+ABD: EveryShipout initializing macros (./Abstract.tex)
+(./Project_Description.tex) (./Stage2_DesignStage.tex
+<Data_Structures.png, id=4, 395.076pt x 313.17pt>
+File: Data_Structures.png Graphic file (type png)
+<use Data_Structures.png>
+Package pdftex.def Info: Data_Structures.png  used on input line 4.
+(pdftex.def)             Requested size: 252.0pt x 199.7591pt.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 9--95
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--95
+
+ []
+
+[1{c:/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+
+ <./Data_Structures.png>] (./Stage3_Implementation.tex) (./Stage4_UserInterface
+.tex)
+>>>>>>> ec8e6f1967ac8264a3f48f60172b7736adc9d3b0
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -733,6 +767,7 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
+<<<<<<< HEAD
 [1{C:/Users/Wael/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
@@ -753,6 +788,28 @@ ram Files/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX
 Output written on 526_project_report_main.pdf (1 page, 43537 bytes).
 PDF statistics:
  22 PDF objects out of 1000 (max. 8388607)
+=======
+[2
+
+] (./526_project_report_main.aux) ) 
+Here is how much of TeX's memory you used:
+ 16341 strings out of 492980
+ 342642 string characters out of 6136223
+ 418929 words of memory out of 5000000
+ 19597 multiletter control sequences out of 15000+600000
+ 35192 words of font info for 64 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 55i,8n,67p,1432b,248s stack positions out of 5000i,500n,10000p,200000b,80000s
+{c:/texlive/2017/texmf-dist/fonts/enc/dvips/
+base/8r.enc}<c:/texlive/2017/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/te
+xlive/2017/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb><c:/texlive/2017/texmf-
+dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2017/texmf-dist/fonts/type1/u
+rw/times/utmri8a.pfb>
+Output written on 526_project_report_main.pdf (2 pages, 58663 bytes).
+PDF statistics:
+ 32 PDF objects out of 1000 (max. 8388607)
+ 22 compressed objects within 1 object stream
+>>>>>>> ec8e6f1967ac8264a3f48f60172b7736adc9d3b0
  0 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 18 words of extra memory for PDF output out of 10000 (max. 10000000)
 
