@@ -1,0 +1,108 @@
+198:105	Great Insights in Computer Science	Fall, Spring
+198:107	Computing for Math and the Sciences	Fall, Spring
+198:110	Introduction to Computers and Their Application	Fall, Spring, Summer
+198:111	Introduction to Computer Science	Fall, Spring, Summer
+198:112	Data Structures	Fall, Spring, Summer
+198:142	Data 1 Data Literacy	Spring
+198:143	Data 1 Data Literacy - Hybrid Version	Summer
+198:170	Computer Application for Business	Fall, Spring, Summer
+198:195	Honors Seminar in Computer Science	Spring
+198:205	Introduction to Discrete Structures I	Fall, Spring, Summer
+198:206	Introduction to Discrete Structures II	Fall, Spring
+198:211	Computer Architecture	Fall, Spring, Summer
+198:213	Software Methodology	Spring
+198:214	Systems Programming	Fall
+198:314	Principles of Programming Languages	Fall, Spring
+198:323	Numerical Analysis and Computing	Spring
+198:324	Numerical Methods*	
+198:334	Introduction to Imaging and Multimedia	
+198:336	Principles of Information and Data Management*	Fall, Spring, Summer
+198:344	Design and Analysis of Computer Algorithms	Fall, Spring
+198:352	Internet Technology	Fall, Spring, Summer
+198:405	Seminar in Computers and Society	Spring
+198:411	Computer Architecture II	
+198:415	Compilers*	Spring
+198:416	Operating Systems Design	Fall, Spring
+198:417	Distributed Systems: Concepts and Design	Fall, Spring
+198:419	Computer Security	Spring
+198:424	Modeling and Simulation of Continuous Systems*	
+198:425	Computer Methods in Statistics*	
+198:428	Introduction to Computer Graphics*	
+198:431	Software Engineering*	Fall
+198:437	Database Systems Implementation	
+198:439	Introduction to Data Science	Spring
+198:440	Introduction to Artificial Intelligence*	Fall
+198:442	Topics in Computer Science*	
+198:443	Topics in Computer Science*	
+198:444	Topics in Computer Science*	
+198:445	Topics in Computer Science	
+198:452	Formal Languages and Automata	Spring
+198:460	Introduction to Computational Robotics	Fall
+198:493	Independent Study in Computer Science	
+198:500	Proseminar in Computer Science		Fall, Spring
+198:503	Computational Thinking		Fall
+198:504	Computational Modeling		Fall
+198:505	Computer Structures	B	Spring
+198:507	Advanced Computer Architecture	B	Fall
+198:508	Formal Language and Automata		Fall
+198:509	Foundations of Computer Science	A	Fall
+198:510	Numerical Analysis	A	Fall, Spring
+198:512	Introduction to Data Structures and Algorithms		Fall, Spring
+198:513	Design and Analysis of Data Structures and Algorithms	A	Fall, Spring
+198:514	Design And Analysis Of Data Structures And Algorithms II	A	Spring
+198:515	Programming Languages And Compilers I	B	Fall
+198:516	Programming Languages And Compilers II	B	Spring
+198:518	Operating Systems Design		Fall, Spring
+198:519	Operating System Theory	B	Fall
+198:520	Introduction To Artificial Intelligence	B	Fall, Spring
+198:521	Linear Programming	A	Fall
+198:522	Network and Combinatorial Optimization Algorithms	A	Spring
+198:523	Computer Graphics	B	Spring
+198:525	Brain-Inspired Computing	B	Fall
+198:526	Data Interaction and Visual Analytics		Spring
+198:527	Computer Methods For Partial Differential Equations	A	Spring
+198:529	Computational Geometry	A	Fall
+198:530	Principles of Aritificial Intelligence	B	Fall
+198:532	Foundations Of Knowledge Representation	B	Spring
+198:533	Natural Language Processing	B	Spring
+198:534	Computer Vision	B	Spring
+198:535	Pattern Recognition: Theory & Applications	B	Spring
+198:536	Machine Learning	B	Spring
+198:538	Complexity Of Computation	A	Spring
+198:539	Database Systems Implementation		Fall
+198:540	Combinatorial Methods In Complexity Theory	A	Spring
+198:541	Database Systems	B	Spring
+198:543	Massive Data Storage, Retrieval and Deep Learning		Fall
+198:544	Computer Security		Spring
+198:545	Distributed Systems	B	Spring
+198:546	Computer System Security		Fall
+198:547	The Security and Dependability of Distributed Systems	B	Spring
+198:550	Massive Data Mining		Spring
+198:552	Computer Networks	B	Fall
+198:553	Design of Internet Services	B	Spring
+198:554	Capstone Project I		Fall, Spring
+198:555	Capstone Project II		Fall, Spring
+198:560	Introduction to Computational Robotics		Fall
+198:580	Topics In Computers In Biomedicine	B	Fall
+198:583	Topics In Software Design	B	Fall
+198:596	Topics In The Foundations Of Computer Science	A	
+198:598	Topics In Artificial Intelligence	B	
+198:601	Selected Problems In Computer Science - Fall - PhD Only		Fall
+198:602	Selected Problems In Computer Science - Spring- PhD Only		Spring
+198:603	Selected Problems In Computer Science - Summer - PhD Only		Summer
+198:604	Selected Problems In Computer Science - Fall - MS Only		Fall
+198:605	Selected Problems In Computer Science - Spring - MS Only		Spring
+198:606	Selected Problems In Computer Science - Summer - MS Only		Summer
+198:607	Problems In Numerical Methods		
+198:608	Problems In Numerical Methods		
+198:671	Seminar in Computer Science		Fall, Spring
+198:672	Seminar in Computer Science		Fall
+198:673	Seminar in Computer Science		
+198:674	Seminar in Computer Science		
+198:701	Research In Computer Science - Fall - PhD Only		Fall
+198:702	Research In Computer Science - Spring - PhD Only		Spring
+198:703	Research In Computer Science - Summer - PhD Only		Summer
+198:704	Research In Computer Science - Fall - MS Thesis Only		Fall
+198:705	Research in Computer Science - Spring - MS Thesis Only		Spring
+198:706	Research in Computer Science - Summer - MS Thesis Only		Summer
+198:800	Matriculation Continued		Fall, Spring
