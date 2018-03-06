@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rutgers TA Match System</title>
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Boostrap JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- FontAwesome -->
+    <script src="./fontawesome-free-5.0.8/svg-with-js/js/fontawesome-all.js"></script>
+    <!-- Bootstrap_v4.0: http://getbootstrap.com/docs/4.0/getting-started/introduction/ -->
+</head>
+
+<body>
+    <div>
+        <!-- NAVBAR -->
+        <nav class="navbar navbar-expand navbar-dark bg-dark justify-content-between">
+            <!-- NAVBAR-BRAND -->
+            <span class="navbar-brand" href="#">
+                    <img src="./images/rutgers_logo_865_768.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                    <span style="PADDING-LEFT: 10px">
+                        Rutgers TA Match System
+                    </span>
+            </span>
+            <!-- NAVBAR-DROPDOWN -->
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Actions
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">
+                        Log Out
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- MAIN  -->
+    <section id="main">
+        <div class="container">
+            <div class="row">
+                <!-- OPTIONS  CARD-->
+                <div class "col-md-3 align-self-start">
+                    <div class="card mt-4">
+                        <div class="card-header">
+                            Options
+                        </div>
+                        <ul class="list-group">
+                            <!-- Triggers Modal -->
+                            <a href="#" class="list-group-item" data-toggle="modal" data-target="#allAppsModal">
+                                All Applications    <span class="badge badge-pill badge-primary">31</span>
+                            </a>
+                            <a href="#" class="list-group-item" data-toggle="modal" data-target="#prioritiesModal">
+                                Priorities  <span class="badge badge-pill badge-secondary">12</span>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+                <!-- OVERVIEW CARD -->
+                <div class="col-md-9">
+                    <div class="card mt-4">
+                        <div class="card-header">
+                            Overview
+                        </div>
+                        <div class="card-body">
+                            <div class="row align-items-center text-center">
+                                <div class="col-lg">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <i class="fas fa-user fa-3x"></i>
+                                            <h5 class="card-title">
+                                                Students <a href="#">(16)</a>
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <i class="fas fa-users fa-3x"></i>
+                                            <h5 class="card-title">
+                                                Professors <a href="#">(8)</a>
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <i class="fas fa-book fa-3x"></i>
+                                            <h5 class="card-title">
+                                                Courses <a href="#">(9)</a>
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <i class="fas fa-server fa-3x"></i>
+                                            <h5 class="card-title">
+                                                Macthes <a href="#">(23)</a>
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- VISUALIZATIONS CARD -->
+                    <div class="card text-center h-100 mt-4">
+                        <div class="card-header">
+                            <ul class="nav nav-tabs card-header-tabs pull-right" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#active" role="tab" aria-controls="home" aria-selected="true">Active</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#matches" role="tab" aria-controls="profile" aria-selected="false">Matches</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-body">
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="active" role="tabpanel" aria-labelledby="home-tab">
+                                    <h5 class="card-title">Visualization</h5>
+                                    <div class="row">
+                                        <div class="col">
+                                            <script>
+                                                function load_home() {
+                                                    document.getElementById("viz").innerHTML = '<object type="text/html" data="viz.html" ></object>';
+                                                }
+                                            </script>
+                                        </div>
+                                    </div>
+                                    <p class="card-text">This is where the D3 visualization will go.</p>
+                                </div>
+                                <div class="tab-pane fade" id="matches" role="tabpanel" aria-labelledby="profile-tab">
+                                    <h5 class="card-title">All Matches</h5>
+                                    <p class="card-text">This is where the visualization showing all matches will go.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODALS -->
+    <div class="modal fade" id="allAppsModal" tabindex="-1" role="dialog" aria-labelledby="allAppsModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="allAppsModalLabel">All Applications</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Table showing all applications to go here.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="prioritiesModal" tabindex="-1" role="dialog" aria-labelledby="prioritiesModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="prioritiesModalLabel">Priorities</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Table of priorities and form to enter new priorities to go here.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

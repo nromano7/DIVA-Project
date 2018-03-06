@@ -1,0 +1,11 @@
+
+{"name": "student",
+"children": [{"name": "Professor 1",
+                      "children": [{"name": "Course1"},
+                                          {"name": "Course2"}]},
+                    {"name": "Professor 2",
+                      "children": [{"name": "Course3"},
+                                          {"name": "Course4"}]},
+                    {"name": "Professor 3",
+                      "children": [{"name": "Course5"},
+                                          {"name": "Course6"}]}]}
