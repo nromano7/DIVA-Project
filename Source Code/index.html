@@ -19,7 +19,7 @@
     <!-- Bootstrap_v4.0: http://getbootstrap.com/docs/4.0/getting-started/introduction/ -->
 </head>
 
-<body>
+<body onload=load_viz()>
     <div>
         <!-- NAVBAR -->
         <nav class="navbar navbar-expand navbar-dark bg-dark justify-content-between">
@@ -62,6 +62,9 @@
                             <a href="#" class="list-group-item" data-toggle="modal" data-target="#prioritiesModal">
                                 Priorities  <span class="badge badge-pill badge-secondary">12</span>
                             </a>
+                            <a href="#" class="list-group-item" data-toggle="modal" data-target="#matchesModal">
+                                Matches  <span class="badge badge-pill badge-secondary">23</span>
+                            </a>
                         </ul>
                     </div>
                 </div>
@@ -103,51 +106,16 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <i class="fas fa-server fa-3x"></i>
-                                            <h5 class="card-title">
-                                                Macthes <a href="#">(23)</a>
-                                            </h5>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
                     <!-- VISUALIZATIONS CARD -->
                     <div class="card text-center h-100 mt-4">
-                        <div class="card-header">
-                            <ul class="nav nav-tabs card-header-tabs pull-right" id="myTab" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#active" role="tab" aria-controls="home" aria-selected="true">Active</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#matches" role="tab" aria-controls="profile" aria-selected="false">Matches</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="card-body">
-                            <div class="tab-content" id="myTabContent">
-                                <div class="tab-pane fade show active" id="active" role="tabpanel" aria-labelledby="home-tab">
-                                    <h5 class="card-title">Visualization</h5>
-                                    <div class="row">
-                                        <div class="col">
-                                            <script>
-                                                function load_home() {
-                                                    document.getElementById("viz").innerHTML = '<object type="text/html" data="viz.html" ></object>';
-                                                }
-                                            </script>
-                                        </div>
-                                    </div>
-                                    <p class="card-text">This is where the D3 visualization will go.</p>
-                                </div>
-                                <div class="tab-pane fade" id="matches" role="tabpanel" aria-labelledby="profile-tab">
-                                    <h5 class="card-title">All Matches</h5>
-                                    <p class="card-text">This is where the visualization showing all matches will go.</p>
-                                </div>
-                            </div>
+                        <div class="card-body" id="vis_body">
+
+                            <!--h5 class="card-title">Visualization</h5-->
+                            <div id="viz"></div>
+                            <!--p class="card-text">This is where the D3 visualization will go.</p-->
                         </div>
                     </div>
                 </div>
@@ -194,6 +162,34 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="matchesModal" tabindex="-1" role="dialog" aria-labelledby="matchesModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="matchesModalLabel">Matches</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Table of all matches will go here.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function load_viz() {
+            var width = $('#vis_body').offsetWidth;
+            var height = $('#vis_body').offsetHeight;
+            document.getElementById("viz").innerHTML = '<object type="text/html" data="example-tree/sample-tree.html" ></object>';
+            console.log(height)
+        }
+    </script>
+
 </body>
 
 </html>
