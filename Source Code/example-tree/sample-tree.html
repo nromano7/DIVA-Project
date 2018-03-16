@@ -31,45 +31,55 @@
         var treeData = {
             "name": "top level",
             "parent": "null",
-            fake:true,
+            "fake": true,
             "children": [{
                 "name": "Student 1",
                 "parent": "top level",
+                "fake": false,
                 "children": [{
                         "name": "Professor 1",
                         "parent": "Student 1",
+                        "fake": false,
                         "children": [{
                                 "name": "Course 1",
-                                "parent": "Professor 1"
+                                "parent": "Professor 1",
+                                "fake": false
                             },
                             {
                                 "name": "Course 2",
-                                "parent": "Professor 1"
+                                "parent": "Professor 1",
+                                "fake": false
                             }
                         ]
                     },
                     {
                         "name": "Professor 2",
                         "parent": "Student 1",
+                        "fake": false,
                         "children": [{
                                 "name": "Course 3",
-                                "parent": "Professor 2"
+                                "parent": "Professor 2",
+                                "fake": false
                             },
                             {
                                 "name": "Course 4",
-                                "parent": "Professor 2"
+                                "parent": "Professor 2",
+                                "fake": false
                             }
                         ]
                     }, {
                         "name": "Professor 3",
                         "parent": "Student 1",
+                        "fake": false,
                         "children": [{
                                 "name": "Course 5",
-                                "parent": "Professor 3"
+                                "parent": "Professor 3",
+                                "fake": false
                             },
                             {
                                 "name": "Course 6",
-                                "parent": "Professor 3"
+                                "parent": "Professor 3",
+                                "fake": false
                             }
                         ]
                     }
@@ -80,38 +90,47 @@
                 "children": [{
                         "name": "Professor 4",
                         "parent": "Student 2",
+                        "fake": false,
                         "children": [{
                                 "name": "Course 7",
-                                "parent": "Professor 4"
+                                "parent": "Professor 4",
+                                "fake": false
                             },
                             {
                                 "name": "Course 8",
-                                "parent": "Professor 4"
+                                "parent": "Professor 4",
+                                "fake": false
                             }
                         ]
                     },
                     {
                         "name": "Professor 5",
                         "parent": "Student 2",
+                        "fake": false,
                         "children": [{
                                 "name": "Course 9",
-                                "parent": "Professor 5"
+                                "parent": "Professor 5",
+                                "fake": false
                             },
                             {
                                 "name": "Course 10",
-                                "parent": "Professor 5"
+                                "parent": "Professor 5",
+                                "fake": false
                             }
                         ]
                     }, {
                         "name": "Professor 6",
                         "parent": "Student 2",
+                        "fake": false,
                         "children": [{
                                 "name": "Course 11",
-                                "parent": "Professor 6"
+                                "parent": "Professor 6",
+                                "fake": false
                             },
                             {
                                 "name": "Course 12",
-                                "parent": "Professor 6"
+                                "parent": "Professor 6",
+                                "fake": false
                             }
                         ]
                     }
@@ -148,7 +167,7 @@
         var treemap = d3.tree().size([height, width]);
 
         // Assigns parent, children, height, depth
-        root = d3.hierarchy(treeData, function(d) {
+        root = d3.hierarchy(treeData, function (d) {
             return d.children;
         });
         root.x0 = height / 2;
@@ -194,7 +213,7 @@
                 links = treeData.descendants().slice(1);
 
             // Normalize for fixed-depth.
-            nodes.forEach(function(d, i) {
+            nodes.forEach(function (d, i) {
                 d.y = d.depth * 180
                 d.r = r[i]
             });
@@ -202,58 +221,58 @@
             // ENTER ------------------------------------
             // update the nodes...
             var node = svg.selectAll('g.node')
-                .data(nodes, function(d) {
+                .data(nodes, function (d) {
                     return d.id || (d.id = ++i);
                 });
-
+            
             // enter any new nodes at the parent's previous position.
             var nodeEnter = node.enter().append('g')
-                .attr('class', function(d) {
-                    return d.fake ? "fake" : "node";
+                .attr('class', function (d) {
+                    return (d.fake) ? "fake" : "node";
                 })
-                .attr("transform", function(d) {
+                .attr("transform", function (d) {
                     return "translate(" + source.y0 + "," + source.x0 + ")";
                 })
                 .on('click', click);
 
             // add circles for nodes
             nodeEnter.append('circle')
-                .attr('class', function(d) {
+                .attr('class', function (d) {
                     return d.fake ? "fake" : "node";
                 })
-                .attr('r', function(d) {
+                .attr('r', function (d) {
                     return d.r;
                 })
-                .style("fill", function(d) {
+                .style("fill", function (d) {
                     return d._children ? "lightsteelblue" : "#fff";
                 });
 
             // add labels for the nodes
             nodeEnter.append('text')
                 .attr("dy", ".35em")
-                .attr("x", function(d) {
+                .attr("x", function (d) {
                     return d.children || d._children ? 0 : 20;
                 })
-                .attr("y", function(d) {
+                .attr("y", function (d) {
                     return d.children || d._children ? d.r + 10 : 0;
                 })
-                .attr("text-anchor", function(d) {
+                .attr("text-anchor", function (d) {
                     return d.children || d._children ? "middle" : "start";
                 })
-                .text(function(d) {
+                .text(function (d) {
                     return d.data.name;
                 });
 
             // update the links...
             var link = svg.selectAll('path.link')
-                .data(links, function(d) {
+                .data(links, function (d) {
                     return d.id;
                 });
 
             // enter any new links at the parent's previous position.
             var linkEnter = link.enter().insert('path', "g")
                 .attr("class", "link")
-                .attr('d', function(d) {
+                .attr('d', function (d) {
                     var o = {
                         x: source.x0,
                         y: source.y0
@@ -267,16 +286,16 @@
             // Transition to the proper position for the node
             nodeUpdate.transition()
                 .duration(duration)
-                .attr("transform", function(d) {
+                .attr("transform", function (d) {
                     return "translate(" + d.y + "," + d.x + ")";
                 });
 
             // Update the node attributes and style
             nodeUpdate.select('circle.node')
-                .attr('r', function(d) {
+                .attr('r', function (d) {
                     return d.r;
                 })
-                .style("fill", function(d) {
+                .style("fill", function (d) {
                     return d._children ? "lightsteelblue" : "#fff";
                 })
                 .attr('cursor', 'pointer');
@@ -286,7 +305,7 @@
             // Transition back to the parent element position
             linkUpdate.transition()
                 .duration(duration)
-                .attr('d', function(d) {
+                .attr('d', function (d) {
                     return diagonal(d, d.parent)
                 });
 
@@ -294,7 +313,7 @@
             // Remove any exiting nodes
             var nodeExit = node.exit().transition()
                 .duration(duration)
-                .attr("transform", function(d) {
+                .attr("transform", function (d) {
                     return "translate(" + source.y + "," + source.x + ")";
                 })
                 .remove();
@@ -310,7 +329,7 @@
             // remove any exiting links
             var linkExit = link.exit().transition()
                 .duration(duration)
-                .attr('d', function(d) {
+                .attr('d', function (d) {
                     var o = {
                         x: source.x,
                         y: source.y
@@ -320,7 +339,7 @@
                 .remove();
 
             // Store the old positions for transition.
-            nodes.forEach(function(d) {
+            nodes.forEach(function (d) {
                 d.x0 = d.x;
                 d.y0 = d.y;
             });
@@ -328,7 +347,8 @@
             // Creates a curved (diagonal) path from parent to the child nodes
             function diagonal(s, d) {
 
-                path = `M ${s.y} ${s.x}
+                path =
+                    `M ${s.y} ${s.x}
             C ${(s.y + d.y) / 2} ${s.x},
               ${(s.y + d.y) / 2} ${d.x},
               ${d.y} ${d.x}`
