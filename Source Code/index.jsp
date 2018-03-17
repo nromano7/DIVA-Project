@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="java.sql.*"%>
 <!doctype html>
 <html lang="en">
 
@@ -17,6 +20,84 @@
     <!-- FontAwesome -->
     <script src="./fontawesome-free-5.0.8/svg-with-js/js/fontawesome-all.js"></script>
     <!-- Bootstrap_v4.0: http://getbootstrap.com/docs/4.0/getting-started/introduction/ -->
+
+<% 
+
+try{
+	
+Class.forName("com.mysql.jdbc.Driver").newInstance(); 
+
+Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/ta_apps","root","root123"); 
+
+Statement stmt = conn.createStatement();
+
+ResultSet rs = stmt.executeQuery("SELECT * from Students");
+
+out.println("<script>");
+out.println("var s_list = [");
+if(rs.next())
+	out.print("[\"" + rs.getString("sid") + "\"]");
+while(rs.next()){
+	out.print(",[\"" + rs.getString("sid") + "\"]");
+}
+out.println("];");
+
+rs.close();
+
+rs = stmt.executeQuery("SELECT * from Professors");
+
+out.println("var p_list = [");
+if(rs.next())
+	out.print("[\"" + rs.getString("pid") + "\"]");
+while(rs.next()){
+	out.print(",[\"" + rs.getString("pid") + "\"]");
+}
+out.println("];");
+
+rs.close();
+
+rs = stmt.executeQuery("SELECT * from Courses");
+
+out.println("var c_list = [");
+if(rs.next())
+	out.print("[\"" + rs.getString("cid")+ "\",\"" + rs.getString("cnumber") + "\"]");
+while(rs.next()){
+	out.print(",[\"" + rs.getString("cid")+ "\",\"" + rs.getString("cnumber") + "\"]");
+}
+out.println("];");
+
+rs.close();
+
+rs = stmt.executeQuery("SELECT * from Apps");
+
+out.println("var a_list = [");
+if(rs.next())
+	out.print("[\"" + rs.getString("appid") 
+			+ "\",\"" + rs.getString("sid") 
+			+ "\",\"" + rs.getString("pid") 
+			+ "\",\"" + rs.getString("cid") 
+			+ "\"]");
+while(rs.next()){
+	out.print(",[\"" + rs.getString("appid")
+	 		+ "\",\"" + rs.getString("sid") 
+			+ "\",\"" + rs.getString("pid") 
+			+ "\",\"" + rs.getString("cid") 
+			+ "\"]");
+}
+out.println("];");
+out.println("</script>");
+
+//Close the ResultSet 
+rs.close(); 
+//ClosetheStatement
+stmt.close();
+//Close the Connection 
+conn.close(); 
+}catch(Exception e){ 
+	out.println(e.getMessage());
+}
+
+%>
 </head>
 
 <body onload=load_viz()>
@@ -57,10 +138,15 @@
                         <ul class="list-group">
                             <!-- Triggers Modal -->
                             <a href="#" class="list-group-item" data-toggle="modal" data-target="#allAppsModal">
-                                All Applications    <span class="badge badge-pill badge-primary">31</span>
+                                All Applications    
+                                <span class="badge badge-pill badge-primary">
+                                <script>
+                                document.write(a_list.length);
+                                </script>
+                                </span>
                             </a>
                             <a href="#" class="list-group-item" data-toggle="modal" data-target="#prioritiesModal">
-                                Priorities  <span class="badge badge-pill badge-secondary">12</span>
+                                Priority List  <span class="badge badge-pill badge-secondary">12</span>
                             </a>
                             <a href="#" class="list-group-item" data-toggle="modal" data-target="#matchesModal">
                                 Matches  <span class="badge badge-pill badge-secondary">23</span>
@@ -81,7 +167,11 @@
                                         <div class="card-body">
                                             <i class="fas fa-user fa-3x"></i>
                                             <h5 class="card-title">
-                                                Students <a href="#">(16)</a>
+                                                Students <a href="#">
+                                                <script>
+                                                document.write("(" + s_list.length + ")");
+                                                </script>
+                                                </a>
                                             </h5>
                                         </div>
                                     </div>
@@ -91,7 +181,11 @@
                                         <div class="card-body">
                                             <i class="fas fa-users fa-3x"></i>
                                             <h5 class="card-title">
-                                                Professors <a href="#">(8)</a>
+                                                Professors <a href="#">
+                                                <script>
+                                                document.write("(" + p_list.length + ")");
+                                                </script>
+                                                </a>
                                             </h5>
                                         </div>
                                     </div>
@@ -101,7 +195,10 @@
                                         <div class="card-body">
                                             <i class="fas fa-book fa-3x"></i>
                                             <h5 class="card-title">
-                                                Courses <a href="#">(9)</a>
+                                                Courses <a href="#">
+                                                <script>
+                                                document.write("(" + c_list.length + ")");
+                                                </script>
                                             </h5>
                                         </div>
                                     </div>

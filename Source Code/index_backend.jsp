@@ -137,7 +137,7 @@ out.println("document.write(c_list);");
 out.println("document.write(\"<br/>\");");
 out.println("document.write(a_list);");
 out.println("document.write(\"<br/>\");");
-out.println("document.write(generateMatching(s_list,p_list,c_list,a_list));");
+out.println("document.write(generateMatching(s_list,p_list,c_list,a_list,[['A0001','S0029','P0008','C0060'],['A0002','S0028','P0032','C0040']]));");
 out.println("document.write(\"<br/>\");");
 out.println("</script>");
 
