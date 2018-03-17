@@ -254,8 +254,8 @@ function generateMatching(s_list,p_list,c_list,a_list,priority_list){
 //	order = 0 --> student,professor,course
 //	order = 1 --> professor,course,student
 //	order = 2 --> course,student,professor
-function generateDatabaseJSON(s_list,p_list,c_list,a_list,order){
-	if(s_list.length == 0 || p_list.length == 0 || c_list.length == 0 || a_list.length == 0 || order < 0 || order > 2)
+function generateDatabaseJSON(a_list,order){
+	if(a_list.length == 0 || order < 0 || order > 2)
 		return null;
 	
 	var json = null;
