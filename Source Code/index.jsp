@@ -21,6 +21,13 @@
     <script src="./fontawesome-free-5.0.8/svg-with-js/js/fontawesome-all.js"></script>
     <!-- Bootstrap_v4.0: http://getbootstrap.com/docs/4.0/getting-started/introduction/ -->
 
+	<script type="text/javascript" src="3D_Matching_Algorithm.js?v=2"></script>
+	<style>
+	table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+	}
+	</style>
 <% 
 
 try{
@@ -85,6 +92,8 @@ while(rs.next()){
 			+ "\"]");
 }
 out.println("];");
+out.println("var priority_list = [];");
+out.println("var matches = [];");
 out.println("</script>");
 
 //Close the ResultSet 
@@ -146,10 +155,10 @@ conn.close();
                                 </span>
                             </a>
                             <a href="#" class="list-group-item" data-toggle="modal" data-target="#prioritiesModal">
-                                Priority List  <span class="badge badge-pill badge-secondary">12</span>
+                                Priority List  <span class="badge badge-pill badge-secondary">0</span>
                             </a>
                             <a href="#" class="list-group-item" data-toggle="modal" data-target="#matchesModal">
-                                Matches  <span class="badge badge-pill badge-secondary">23</span>
+                                Matches  <span class="badge badge-pill badge-secondary" id="matches">--</span>
                             </a>
                         </ul>
                     </div>
@@ -216,6 +225,62 @@ conn.close();
                         </div>
                     </div>
                 </div>
+                <button id="clickMe">Generate Matching</button>
+                <script>
+                function update_matching_table(){
+                	var ret = '<table><tr><th id="app_sort">Application_ID</th><th id="s_sort">' +
+                				'Student_ID</th><th id="p_sort">Professor_ID</th>' +
+                				'<th id="c_sort">Course_ID</th></tr>';
+                    for(i = 0; i < matches.length; i++){
+                    	ret += '<tr>';
+                    	for(j = 0; j < matches[i].length; j++){
+                    		ret += '<th>' + matches[i][j] + '</th>';
+                    	}
+                    	ret += '</tr>';
+                    }
+                    ret += '</table>';
+                    return ret;
+                }
+                function addListeners(){
+                	document.getElementById("app_sort").addEventListener("click", function(){
+						matches.sort(function(a, b){
+							return a[0].localeCompare(b[0]);
+						});
+						document.getElementById("matches_table").innerHTML = update_matching_table();
+						addListeners();
+					});
+					document.getElementById("s_sort").addEventListener("click", function(){
+						matches.sort(function(a, b){
+							return a[1].localeCompare(b[1]);
+						});
+						document.getElementById("matches_table").innerHTML = update_matching_table();
+						addListeners();
+					});
+					document.getElementById("p_sort").addEventListener("click", function(){
+						matches.sort(function(a, b){
+							return a[2].localeCompare(b[2]);
+						});
+						document.getElementById("matches_table").innerHTML = update_matching_table();
+						addListeners();
+					});
+					document.getElementById("c_sort").addEventListener("click", function(){
+						matches.sort(function(a, b){
+							return a[3].localeCompare(b[3]);
+						});
+						document.getElementById("matches_table").innerHTML = update_matching_table();
+						addListeners();
+					});
+                }
+				document.getElementById("clickMe").addEventListener("click", function () { 
+					var temp = generateMatching(s_list,p_list,c_list,a_list,priority_list);
+					if(temp.length >= matches.length){
+						matches = temp.slice();
+						document.getElementById("matches").innerHTML = matches.length;
+						document.getElementById("matches_table").innerHTML = update_matching_table();
+						addListeners();
+					}
+					});
+				</script>
             </div>
         </div>
     </section>
@@ -268,7 +333,7 @@ conn.close();
                       <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body" id="matches_table" align="center" style="height:500px;overflow:auto;">
                     Table of all matches will go here.
                 </div>
                 <div class="modal-footer">

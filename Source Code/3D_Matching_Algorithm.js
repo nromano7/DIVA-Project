@@ -7,6 +7,7 @@ function generateMatching(s_list,p_list,c_list,a_list,priority_list){
 	if(s_list.length == 0 || p_list.length == 0 || c_list.length == 0 || a_list.length == 0)
 		return null;
 	
+	var dictionary = {};
 	var ret = [];
 	
 	for(i = 0; i < a_list.length; i++){
@@ -15,6 +16,7 @@ function generateMatching(s_list,p_list,c_list,a_list,priority_list){
 			temp.push(a_list[i][j].substring(1));
 		}
 		ret.push(temp);
+		dictionary[temp] = a_list[i];
 	}
 	
 	var priority = [];
@@ -136,7 +138,6 @@ function generateMatching(s_list,p_list,c_list,a_list,priority_list){
 				if(buckets[j].length == 0)
 					isEmpty[j] = true;
 			}
-			console.log(isEmpty);
 			
 			if(!isEmpty[0] && !isEmpty[1] && !isEmpty[2]){
 				loop1:
@@ -237,17 +238,15 @@ function generateMatching(s_list,p_list,c_list,a_list,priority_list){
 				p_vector[parseInt(removedTup[1])] = 1;
 				c_vector[parseInt(removedTup[2])] = 1;
 			}
-
-			console.log(removedTup);
-			console.log(best);
 		}
-		console.log(" ");
-		console.log(" ");
-		console.log(" ");
 		console.log(len + " " + matching.length);
 	}
-	
-	return matching;
+	var final_matching = [];
+	for(i = 0; i < matching.length; i++){
+		final_matching.push(dictionary[matching[i]]);
+	}
+	console.log(final_matching);
+	return final_matching;
 }
 
 // order can be either 0,1,2:
