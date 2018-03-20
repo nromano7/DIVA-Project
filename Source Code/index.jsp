@@ -113,9 +113,9 @@ function update_apps_table(){
 	var ret = '<table><tr><th id="app_sort1">Application_ID</th><th id="s_sort1">' +
 				'Student_ID</th><th id="p_sort1">Professor_ID</th>' +
 				'<th id="c_sort1">Course_ID</th></tr>';
-    for(i = 0; i < a_list.length; i++){
+    for(let i = 0; i < a_list.length; i++){
     	ret += '<tr>';
-    	for(j = 0; j < a_list[i].length; j++){
+    	for(let j = 0; j < a_list[i].length; j++){
     		ret += '<th>' + a_list[i][j] + '</th>';
     	}
     	ret += '</tr>';
@@ -278,9 +278,9 @@ function addListenersToApps(){
                 	var ret = '<table><tr><th id="app_sort">Application_ID</th><th id="s_sort">' +
                 				'Student_ID</th><th id="p_sort">Professor_ID</th>' +
                 				'<th id="c_sort">Course_ID</th></tr>';
-                    for(i = 0; i < matches.length; i++){
+                    for(let i = 0; i < matches.length; i++){
                     	ret += '<tr>';
-                    	for(j = 0; j < matches[i].length; j++){
+                    	for(let j = 0; j < matches[i].length; j++){
                     		ret += '<th>' + matches[i][j] + '</th>';
                     	}
                     	ret += '</tr>';
@@ -319,14 +319,16 @@ function addListenersToApps(){
 					});
                 }
 				document.getElementById("clickMe").addEventListener("click", function () { 
-					var temp = generateMatching(s_list,p_list,c_list,a_list,priority_list);
-					if(temp.length >= matches.length){
-						matches = temp.slice();
-						document.getElementById("matches").innerHTML = matches.length;
-						document.getElementById("matches_table").innerHTML = update_matching_table();
-						addListenersToMatches();
+					var temp = [];
+					for(let i = 0; i < 20; i++){
+						temp = generateMatching(s_list,p_list,c_list,a_list,priority_list);
+						if(temp.length >= matches.length)
+							matches = temp.slice();
 					}
-					});
+					document.getElementById("matches").innerHTML = matches.length;
+					document.getElementById("matches_table").innerHTML = update_matching_table();
+					addListenersToMatches();
+				});
 				</script>
             </div>
         </div>
