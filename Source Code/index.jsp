@@ -117,7 +117,7 @@ conn.close();
             <span class="navbar-brand" href="#">
                     <img src="./images/rutgers_logo_865_768.png" width="30" height="30" class="d-inline-block align-top" alt="">
                     <span style="PADDING-LEFT: 10px">
-                        Rutgers TA Match System
+                        Rutgers TA Match Systems
                     </span>
             </span>
             <!-- NAVBAR-DROPDOWN -->

@@ -1,11 +1,109 @@
-
-{"name": "student",
-"children": [{"name": "Professor 1",
-                      "children": [{"name": "Course1"},
-                                          {"name": "Course2"}]},
-                    {"name": "Professor 2",
-                      "children": [{"name": "Course3"},
-                                          {"name": "Course4"}]},
-                    {"name": "Professor 3",
-                      "children": [{"name": "Course5"},
-                                          {"name": "Course6"}]}]}
+treeData = {
+  "name": "top level",
+  "parent": "null",
+  "fake": true,
+  "children": [{
+    "name": "Student 1",
+    "parent": "top level",
+    "fake": false,
+    "children": [{
+        "name": "Professor 1",
+        "parent": "Student 1",
+        "fake": false,
+        "children": [{
+            "name": "Course 1",
+            "parent": "Professor 1",
+            "fake": false
+          },
+          {
+            "name": "Course 2",
+            "parent": "Professor 1",
+            "fake": false
+          }
+        ]
+      },
+      {
+        "name": "Professor 2",
+        "parent": "Student 1",
+        "fake": false,
+        "children": [{
+            "name": "Course 3",
+            "parent": "Professor 2",
+            "fake": false
+          },
+          {
+            "name": "Course 4",
+            "parent": "Professor 2",
+            "fake": false
+          }
+        ]
+      }, {
+        "name": "Professor 3",
+        "parent": "Student 1",
+        "fake": false,
+        "children": [{
+            "name": "Course 5",
+            "parent": "Professor 3",
+            "fake": false
+          },
+          {
+            "name": "Course 6",
+            "parent": "Professor 3",
+            "fake": false
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Student 2",
+    "parent": "top level",
+    "children": [{
+        "name": "Professor 4",
+        "parent": "Student 2",
+        "fake": false,
+        "children": [{
+            "name": "Course 7",
+            "parent": "Professor 4",
+            "fake": false
+          },
+          {
+            "name": "Course 8",
+            "parent": "Professor 4",
+            "fake": false
+          }
+        ]
+      },
+      {
+        "name": "Professor 5",
+        "parent": "Student 2",
+        "fake": false,
+        "children": [{
+            "name": "Course 9",
+            "parent": "Professor 5",
+            "fake": false
+          },
+          {
+            "name": "Course 10",
+            "parent": "Professor 5",
+            "fake": false
+          }
+        ]
+      }, {
+        "name": "Professor 6",
+        "parent": "Student 2",
+        "fake": false,
+        "children": [{
+            "name": "Course 11",
+            "parent": "Professor 6",
+            "fake": false
+          },
+          {
+            "name": "Course 12",
+            "parent": "Professor 6",
+            "fake": false
+          }
+        ]
+      }
+    ]
+  }]
+}

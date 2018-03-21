@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <title>Rutgers TA Match System</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+
+  <!-- FontAwesome -->
+  <script src="./fontawesome-free-5.0.8/svg-with-js/js/fontawesome-all.js"></script>
+
+  <!-- JS -->
+  <script type="text/javascript" src="3D_Matching_Algorithm.js?v=2"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+  <!-- Custom CSS -->
+  <style>
+    html,
+    body {
+      height: 100%;
+    }
+  </style>
+
+
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand navbar-dark bg-dark justify-content-between">
+    <span class="navbar-brand" href="#">
+      <img src="./images/rutgers_logo_865_768.png" width="30" height="30" class="d-inline-block align-top" alt="">
+      <span style="PADDING-LEFT: 10px">
+        Rutgers TA Match Systems
+      </span>
+    </span>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false">
+        Actions
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">
+          Log Out
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid h-100" style="padding-right: 1%; padding-left: 1%;">
+    <div class="row mt-4 mb-4 h-100">
+      <div class="col-sm-2">
+        <div class="row">
+          <div class="col">
+            <div class="card">
+              <div class="card-header">
+                Menu
+              </div>
+              <ul class="list-group list-group-flush">
+                <a href="#" class="list-group-item" data-toggle="modal" data-target="#allAppsModal">
+                  All Applications
+                  <span class="badge badge-pill badge-primary">
+                    <script>
+                      document.write(a_list.length);
+                    </script>
+                  </span>
+                </a>
+                <a href="#" class="list-group-item" data-toggle="modal" data-target="#prioritiesModal">
+                  Priority List
+                  <span class="badge badge-pill badge-secondary">0</span>
+                </a>
+                <a href="#" class="list-group-item" data-toggle="modal" data-target="#matchesModal">
+                  Matches
+                  <span class="badge badge-pill badge-secondary" id="matches">--</span>
+                </a>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+        <div class="row mt-4">
+          <div class="col text-center">
+            <button type="button" class="btn btn-secondary" id="clickMe" style="justify-content: center;">Generate Matching</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-10">
+        <div class="card h-100">
+          <div class="card-header text-right">
+
+            <button type="button" class="btn btn-outline-primary">
+              <i class="fas fa-users"></i> Students
+              <span class="badge badge-pill badge-primary" id="matches">
+                <script>
+                  document.write("(" + s_list.length + ")");
+                </script>
+              </span>
+            </button>
+            <button type="button" class="btn btn-outline-info">
+              <i class="fas fa-users"></i> Professors
+              <span class="badge badge-pill badge-info" id="matches">
+                <script>
+                  document.write("(" + p_list.length + ")");
+                </script>
+              </span>
+            </button>
+            <button type="button" class="btn btn-outline-secondary">
+              <i class="fas fa-book"></i> Courses
+              <span class="badge badge-pill badge-secondary" id="matches">
+                <script>
+                  document.write("(" + c_list.length + ")");
+                </script>
+              </span>
+            </button>
+          </div>
+          <div class="card-body">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODALS -->
+	<div class="modal fade" id="allAppsModal" tabindex="-1" role="dialog" aria-labelledby="allAppsModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="allAppsModalLabel">All Applications</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Table showing all applications to go here.
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="prioritiesModal" tabindex="-1" role="dialog" aria-labelledby="prioritiesModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="prioritiesModalLabel">Priorities</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Table of priorities and form to enter new priorities to go here.
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="matchesModal" tabindex="-1" role="dialog" aria-labelledby="matchesModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="matchesModalLabel">Matches</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="matches_table" align="center" style="height:500px;overflow:auto;">
+            Table of all matches will go here.
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>  
+
+</body>
+
+</html>

@@ -109,7 +109,6 @@ var treeData = {
   }]
 };
 
-
 // INPUTS
 // dimensions and margins
 var margin = {
@@ -118,9 +117,9 @@ var margin = {
     bottom: 20,
     left: 100
   },
-  windowWidth = document.documentElement.clientWidth;
-windowHeight = document.documentElement.clientHeight;
-width = windowWidth - margin.right - margin.left,
+  windowWidth = document.documentElement.clientWidth,
+  windowHeight = document.documentElement.clientHeight,
+  width = windowWidth - margin.right - margin.left,
   height = windowHeight - margin.top - margin.bottom;
 
 var i = 0,
@@ -183,6 +182,8 @@ function render(source) {
   var nodes = treeData.descendants(),
     links = treeData.descendants().slice(1);
 
+  console.log(links)
+
   // Normalize for fixed-depth.
   nodes.forEach(function (d, i) {
     d.y = d.depth * 180
@@ -199,7 +200,7 @@ function render(source) {
   // enter any new nodes at the parent's previous position.
   var nodeEnter = node.enter().append('g')
     .attr('class', function (d) {
-      return (d.fake) ? "fake" : "node";
+      return d.parent ? "node" : "fake";
     })
     .attr("transform", function (d) {
       return "translate(" + source.y0 + "," + source.x0 + ")";
@@ -242,7 +243,9 @@ function render(source) {
 
   // enter any new links at the parent's previous position.
   var linkEnter = link.enter().insert('path', "g")
-    .attr("class", "link")
+    .attr("class", function (d) {
+      return d.fake ? "fake" : "link";
+    })
     .attr('d', function (d) {
       var o = {
         x: source.x0,
@@ -316,6 +319,7 @@ function render(source) {
   });
 
   // Creates a curved (diagonal) path from parent to the child nodes
+  // s = source, d = destination
   function diagonal(s, d) {
 
     path =
