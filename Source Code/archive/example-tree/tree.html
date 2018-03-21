@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <title>Tree</title>
+
+  <!-- Meta -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="tree.css">
+
+  <!-- JS -->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src='./tree.js'></script>
+
+</head>
+
+<body>
+
+  <div id="tree">
+    <script>
+      // DATA
+      var treeData = {
+        "name": "top level",
+        "parent": "null",
+        "fake": true,
+        "children": [{
+          "name": "Student 1",
+          "parent": "top level",
+          "fake": false,
+          "children": [{
+              "name": "Professor 1",
+              "parent": "Student 1",
+              "fake": false,
+              "children": [{
+                  "name": "Course 1",
+                  "parent": "Professor 1",
+                  "fake": false
+                },
+                {
+                  "name": "Course 2",
+                  "parent": "Professor 1",
+                  "fake": false
+                }
+              ]
+            },
+            {
+              "name": "Professor 2",
+              "parent": "Student 1",
+              "fake": false,
+              "children": [{
+                  "name": "Course 3",
+                  "parent": "Professor 2",
+                  "fake": false
+                },
+                {
+                  "name": "Course 4",
+                  "parent": "Professor 2",
+                  "fake": false
+                }
+              ]
+            }, {
+              "name": "Professor 3",
+              "parent": "Student 1",
+              "fake": false,
+              "children": [{
+                  "name": "Course 5",
+                  "parent": "Professor 3",
+                  "fake": false
+                },
+                {
+                  "name": "Course 6",
+                  "parent": "Professor 3",
+                  "fake": false
+                }
+              ]
+            }
+          ]
+        }, {
+          "name": "Student 2",
+          "parent": "top level",
+          "children": [{
+              "name": "Professor 4",
+              "parent": "Student 2",
+              "fake": false,
+              "children": [{
+                  "name": "Course 7",
+                  "parent": "Professor 4",
+                  "fake": false
+                },
+                {
+                  "name": "Course 8",
+                  "parent": "Professor 4",
+                  "fake": false
+                }
+              ]
+            },
+            {
+              "name": "Professor 5",
+              "parent": "Student 2",
+              "fake": false,
+              "children": [{
+                  "name": "Course 9",
+                  "parent": "Professor 5",
+                  "fake": false
+                },
+                {
+                  "name": "Course 10",
+                  "parent": "Professor 5",
+                  "fake": false
+                }
+              ]
+            }, {
+              "name": "Professor 6",
+              "parent": "Student 2",
+              "fake": false,
+              "children": [{
+                  "name": "Course 11",
+                  "parent": "Professor 6",
+                  "fake": false
+                },
+                {
+                  "name": "Course 12",
+                  "parent": "Professor 6",
+                  "fake": false
+                }
+              ]
+            }
+          ]
+        }]
+      };
+      render_tree(treeData);
+    </script>
+  </div>
+
+</body>
+
+</html>
