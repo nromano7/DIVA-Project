@@ -10,9 +10,9 @@ function generateMatching(s_list,p_list,c_list,a_list,priority_list){
 	var dictionary = {};
 	var ret = [];
 	
-	for(i = 0; i < a_list.length; i++){
+	for(let i = 0; i < a_list.length; i++){
 		var temp = []
-		for(j = 1; j < a_list[i].length; j++){
+		for(let j = 1; j < a_list[i].length; j++){
 			temp.push(a_list[i][j].substring(1));
 		}
 		ret.push(temp);
@@ -20,30 +20,30 @@ function generateMatching(s_list,p_list,c_list,a_list,priority_list){
 	}
 	
 	var priority = [];
-	for(i = 0; i < priority_list.length; i++){
+	for(let i = 0; i < priority_list.length; i++){
 		var temp = []
-		for(j = 1; j < priority_list[i].length; j++){
+		for(let j = 1; j < priority_list[i].length; j++){
 			temp.push(priority_list[i][j].substring(1));
 		}
 		priority.push(temp);
 	}
 	
 	var s_vector = [];
-	for(i = 0; i < s_list.length; i++){
+	for(let i = 0; i < s_list.length; i++){
 		s_vector.push(0);
 	}
 	var p_vector = [];
-	for(i = 0; i < p_list.length; i++){
+	for(let i = 0; i < p_list.length; i++){
 		p_vector.push(0);
 	}
 	var c_vector = [];
-	for(i = 0; i < c_list.length; i++){
+	for(let i = 0; i < c_list.length; i++){
 		c_vector.push(0);
 	}
 	
 	function generateNaiveMatching(){
 		var matching = [];
-		for(i = 0; i < priority.length; i++){
+		for(let i = 0; i < priority.length; i++){
 			matching.push(priority[i]);
 			s_vector[parseInt(priority[i][0])] = 1;
 			p_vector[parseInt(priority[i][1])] = 1;
@@ -51,7 +51,7 @@ function generateMatching(s_list,p_list,c_list,a_list,priority_list){
 		}
 		var ret_slice = ret.slice();
 		ret_slice = shuffle(ret_slice);
-		for(i = 0; i < ret_slice.length; i++){
+		for(let i = 0; i < ret_slice.length; i++){
 			if(s_vector[parseInt(ret_slice[i][0])] == 0 
 			&& p_vector[parseInt(ret_slice[i][1])] == 0 
 			&& c_vector[parseInt(ret_slice[i][2])] == 0){
@@ -70,14 +70,14 @@ function generateMatching(s_list,p_list,c_list,a_list,priority_list){
 	while(change == true){
 		change = false;
 		len = matching.length;
-		for(i = priority.length; i < len; i++){
+		for(let i = priority.length; i < len; i++){
 			var removedTup = matching.splice(i,1)[0];
 			s_vector[parseInt(removedTup[0])] = 0;
 			p_vector[parseInt(removedTup[1])] = 0;
 			c_vector[parseInt(removedTup[2])] = 0;
 			
 			var uncontradicting = [];
-			for(j = 0; j < ret.length; j++){
+			for(let j = 0; j < ret.length; j++){
 				if(s_vector[parseInt(ret[j][0])] == 0
 				&& p_vector[parseInt(ret[j][1])] == 0
 				&& c_vector[parseInt(ret[j][2])] == 0)
@@ -91,7 +91,7 @@ function generateMatching(s_list,p_list,c_list,a_list,priority_list){
 			// buckets[4] = contradict with coord 0 & 2
 			// buckets[5] = contradict with coord 0 & 1
 			var buckets = [[],[],[],[],[],[]];
-			for(j = 0; j < uncontradicting.length; j++){
+			for(let j = 0; j < uncontradicting.length; j++){
 				var contradicts = [false,false,false];
 				if(uncontradicting[j][0] == removedTup[0])
 					contradicts[0] = true;
@@ -134,18 +134,18 @@ function generateMatching(s_list,p_list,c_list,a_list,priority_list){
 			
 			var best = [];
 			var isEmpty = [false,false,false,false,false,false];
-			for(j = 0; j < 6; j++){
+			for(let j = 0; j < 6; j++){
 				if(buckets[j].length == 0)
 					isEmpty[j] = true;
 			}
 			
 			if(!isEmpty[0] && !isEmpty[1] && !isEmpty[2]){
 				loop1:
-				for(j = 0; j < buckets[0].length; j++){
+				for(let j = 0; j < buckets[0].length; j++){
 					loop2:
-					for(k = 0; k < buckets[1].length; k++){
+					for(let k = 0; k < buckets[1].length; k++){
 						loop3:
-						for(l = 0; l < buckets[2].length; l++){
+						for(let l = 0; l < buckets[2].length; l++){
 							var contradicts = [false,false,false];
 							if(buckets[0][j][2] == buckets[1][k][2])
 								contradicts[0] = true;
@@ -179,9 +179,9 @@ function generateMatching(s_list,p_list,c_list,a_list,priority_list){
 			}
 			else if(!isEmpty[0] && !isEmpty[1]){
 				loop1:
-				for(j = 0; j < buckets[0].length; j++){
+				for(let j = 0; j < buckets[0].length; j++){
 					loop2:
-					for(k = 0; k < buckets[1].length; k++){
+					for(let k = 0; k < buckets[1].length; k++){
 						if(buckets[0][j][2] != buckets[1][k][2]){
 							best.splice(0,best.length,buckets[0][j],buckets[1][k]);
 							break loop1;
@@ -191,9 +191,9 @@ function generateMatching(s_list,p_list,c_list,a_list,priority_list){
 			}
 			else if(!isEmpty[0] && !isEmpty[2]){
 				loop1:
-				for(j = 0; j < buckets[0].length; j++){
+				for(let j = 0; j < buckets[0].length; j++){
 					loop2:
-					for(k = 0; k < buckets[2].length; k++){
+					for(let k = 0; k < buckets[2].length; k++){
 						if(buckets[0][j][1] != buckets[2][k][1]){
 							best.splice(0,best.length,buckets[0][j],buckets[2][k]);
 							break loop1;
@@ -203,9 +203,9 @@ function generateMatching(s_list,p_list,c_list,a_list,priority_list){
 			}
 			else if(!isEmpty[1] && !isEmpty[2]){
 				loop1:
-				for(j = 0; j < buckets[1].length; j++){
+				for(let j = 0; j < buckets[1].length; j++){
 					loop2:
-					for(k = 0; k < buckets[2].length; k++){
+					for(let k = 0; k < buckets[2].length; k++){
 						if(buckets[1][j][0] != buckets[2][k][0]){
 							best.splice(0,best.length,buckets[1][j],buckets[2][k]);
 							break loop1;
@@ -215,7 +215,7 @@ function generateMatching(s_list,p_list,c_list,a_list,priority_list){
 			}
 			
 			if(best.length < 2){
-				for(j = 0; j < 3; j++){
+				for(let j = 0; j < 3; j++){
 					if(!isEmpty[j] && !isEmpty[j+3]){
 						best.splice(0,best.length,buckets[j][0],buckets[j+3][0]);
 						break;
@@ -224,7 +224,7 @@ function generateMatching(s_list,p_list,c_list,a_list,priority_list){
 			}
 			
 			if(best.length >= 2){
-				for(j = 0; j < best.length; j++){
+				for(let j = 0; j < best.length; j++){
 					matching.push(best[j]);
 					s_vector[parseInt(best[j][0])] = 1;
 					p_vector[parseInt(best[j][1])] = 1;
@@ -242,7 +242,7 @@ function generateMatching(s_list,p_list,c_list,a_list,priority_list){
 		console.log(len + " " + matching.length);
 	}
 	var final_matching = [];
-	for(i = 0; i < matching.length; i++){
+	for(let i = 0; i < matching.length; i++){
 		final_matching.push(dictionary[matching[i]]);
 	}
 	console.log(final_matching);
@@ -291,7 +291,7 @@ function generateDatabaseJSON(a_list,order){
 		                        '"parent": "' + list[0][orders[1]] + '",' +
 		                        '"fake": false' +
                     '}';
-	for(i = 1; i < list.length; i++){
+	for(let i = 1; i < list.length; i++){
 		if(i%10 == 0)
 			partition_required = true;
 		if(list[i][orders[0]] == list[i-1][orders[0]] && list[i][orders[1]] == list[i-1][orders[1]])
