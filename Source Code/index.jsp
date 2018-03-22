@@ -603,9 +603,11 @@ conn.close();
 
           <!-- MAIN -->
           <div class="col-sm-10">
+
+            <!-- TREE CARD -->
             <div id="tree" class="card h-100">
               <div class="card-header text-right">
-                <button id="students_button" type="button" class="btn btn-outline-primary">
+                <button id="students_button" type="button" class="btn btn-primary">
                   <i class="fas fa-users"></i> Students
                   <span class="badge badge-pill badge-primary" id="matches">
                     <script>
@@ -614,6 +616,9 @@ conn.close();
                   </span>
                   <script>
                     document.getElementById("students_button").addEventListener("click", function () {
+                      document.getElementById("students_button").setAttribute("class", "btn btn-primary")
+                      document.getElementById("professors_button").setAttribute("class", "btn btn-outline-info")
+                      document.getElementById("courses_button").setAttribute("class", "btn btn-outline-secondary")
                       treeData = generateDatabaseJSON(a_list, 0);
                       var h = document.getElementById('tree').clientHeight,
                         w = document.getElementById('tree').clientWidth,
@@ -627,7 +632,7 @@ conn.close();
                         bottom: 100,
                         left: 0
                       };
-                      d3.selectAll("svg").remove();
+                      d3.selectAll("#tree_svg").remove();
                       render_tree(treeData, size, margin);
                     });
                   </script>
@@ -641,6 +646,9 @@ conn.close();
                   </span>
                   <script>
                     document.getElementById("professors_button").addEventListener("click", function () {
+                      document.getElementById("students_button").setAttribute("class", "btn btn-outline-primary")
+                      document.getElementById("professors_button").setAttribute("class", "btn btn-info")
+                      document.getElementById("courses_button").setAttribute("class", "btn btn-outline-secondary")
                       treeData = generateDatabaseJSON(a_list, 1);
                       var h = document.getElementById('tree').clientHeight,
                         w = document.getElementById('tree').clientWidth,
@@ -654,7 +662,7 @@ conn.close();
                         bottom: 100,
                         left: 0
                       };
-                      d3.selectAll("svg").remove();
+                      d3.selectAll("#tree_svg").remove();
                       render_tree(treeData, size, margin);
                     });
                   </script>
@@ -668,6 +676,9 @@ conn.close();
                   </span>
                   <script>
                     document.getElementById("courses_button").addEventListener("click", function () {
+                      document.getElementById("students_button").setAttribute("class", "btn btn-outline-primary")
+                      document.getElementById("professors_button").setAttribute("class", "btn btn-outline-info")
+                      document.getElementById("courses_button").setAttribute("class", "btn btn-secondary")
                       treeData = generateDatabaseJSON(a_list, 2);
                       var h = document.getElementById('tree').clientHeight,
                         w = document.getElementById('tree').clientWidth,
@@ -681,10 +692,13 @@ conn.close();
                         bottom: 100,
                         left: 0
                       };
-                      d3.selectAll("svg").remove();
+                      d3.selectAll("#tree_svg").remove();
                       render_tree(treeData, size, margin);
                     });
                   </script>
+                </button>
+                <button id="priority_button" type="button" class="btn btn-outline-success ml-auto" disabled>
+                  Add To Priority List
                 </button>
               </div>
               <!-- TREE VISUALIZATION -->
@@ -705,6 +719,8 @@ conn.close();
                 render_tree(treeData, size, margin);
               </script>
             </div>
+
+
           </div>
         </div>
       </div>

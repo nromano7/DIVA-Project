@@ -2,7 +2,7 @@
 function render_tree(treeData, size, margin) {
 
   // dimensions and margins
-  var duration = 500; // load duration (ms)
+  var duration = 1000; // load duration (ms)
    
   var root,
     width = size.width - margin.right - margin.left,
@@ -12,6 +12,7 @@ function render_tree(treeData, size, margin) {
   // append svg element to body and group element to svg
   var svg = d3.select("#tree")
     .append("svg")
+    .attr("id","tree_svg")
     .attr("width", width + margin.right + margin.left)
     .attr("height", height + margin.top + margin.bottom)
     .append("g")
@@ -60,6 +61,8 @@ function render_tree(treeData, size, margin) {
     }
   }
 
+  var id=0;
+
   function render(source) {
 
     // layout root hierarchy
@@ -78,7 +81,6 @@ function render_tree(treeData, size, margin) {
 
     // ENTER ------------------------------------
     // update the nodes...
-    let id=0;
     var node = svg.selectAll('g.node')
       .data(nodes, function (d) {
         return d.id || (d.id = ++id);
