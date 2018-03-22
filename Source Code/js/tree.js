@@ -26,24 +26,27 @@ function render_tree(treeData, size, margin) {
   root.x0 = height / 2;
   root.y0 = 0;
 
-  // create array of node sizes based on number of descendants
+//create array of node sizes based on number of descendants
   function nodeSize(d) {
-    var radii = [],
-      numNodes = d.length;
-    for (let i = 0; i < d.length; i++) {
-      if (d[i].hasOwnProperty("children")) {
-        var numChildren = d[i].children.length;
-        radii.push(100 * numChildren / numNodes);
-      } else {
-        radii.push(10);
+      var radii = [],
+          numNodes = d.length;
+      for (i = 0; i < d.length; i++) {
+          if (d[i].hasOwnProperty("children") && d[i].children != null) {
+              var numChildren = d[i].children.length;
+              radii.push(10 * Math.sqrt(numChildren));
+          } else if(d[i].hasOwnProperty("_children") && d[i]._children != null){
+          	var numChildren = d[i]._children.length;
+              radii.push(10 * Math.sqrt(numChildren));
+          } else {
+              radii.push(10);
+          }
       }
-    }
-    return radii;
+      return radii;
   }
   var r = nodeSize(root.descendants());
 
   // Collapse after the second level
-  //root.children.forEach(collapse);
+  root.children.forEach(collapse);
 
   render(root);
 
@@ -65,6 +68,7 @@ function render_tree(treeData, size, margin) {
     var nodes = treeData.descendants(),
       links = treeData.descendants().slice(1);
 
+    var r = nodeSize(nodes);
     // Normalize for fixed-depth.
     nodes.forEach(function (d, i) {
       d.y = d.depth * 180
@@ -103,19 +107,19 @@ function render_tree(treeData, size, margin) {
 
     // add labels for the nodes
     nodeEnter.append('text')
-      .attr("dy", ".35em")
-      .attr("x", function (d) {
-        return d.children || d._children ? 0 : 20;
-      })
-      .attr("y", function (d) {
-        return d.children || d._children ? d.r + 10 : 0;
-      })
-      .attr("text-anchor", function (d) {
-        return d.children || d._children ? "middle" : "start";
-      })
-      .text(function (d) {
-        return d.data.name;
-      });
+        .attr("dy", ".35em")
+        .attr("x", function (d) {
+            return d.children || d._children ? -1*d.r - 35 : -1*d.r + 35;
+        })
+        //.attr("y", function (d) {
+        //    return d.children || d._children ? d.r + 10 : 0;
+        //})
+        .attr("text-anchor", function (d) {
+            return d.children || d._children ? "middle" : "start";
+        })
+        .text(function (d) {
+            return d.data.name;
+        });
 
     // update the links...
     var link = svg.selectAll('path.link')

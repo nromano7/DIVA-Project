@@ -332,7 +332,7 @@ function generateDatabaseJSON(a_list,order){
 			
 			json += '{' +
 		        '"name": "' + list[i][orders[0]] + '",' +
-		        '"parent": "top level",' +
+		        '"parent": "Partition_' + partition_count + '",' +
 		        '"children": [{' +
 		                '"name": "' + list[i][orders[1]] + '",' +
 		                '"parent": "' + list[i][orders[0]] + '",' +

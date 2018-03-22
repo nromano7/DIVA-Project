@@ -89,14 +89,3 @@ function addListenersToMatches() {
     addListenersToMatches();
   });
 }
-
-document.getElementById("clickMe").addEventListener("click", function () {
-      var temp = [];
-      for (let i = 0; i < 20; i++) {
-        temp = generateMatching(s_list, p_list, c_list, a_list, priority_list);
-        if (temp.length >= matches.length)
-          matches = temp.slice();
-      }
-      document.getElementById("matches").innerHTML = matches.length;
-      document.getElementById("matches_table").innerHTML = update_matching_table();
-      addListenersToMatches();

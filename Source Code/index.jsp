@@ -24,6 +24,9 @@
       <script type="text/javascript" src="./js/3D_Matching_Algorithm.js"></script>
       <script type="text/javascript" src="./js/tree.js"></script>
       <script type="text/javascript" src="./js/tables.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
       <!-- TEMPORARY HARD CODED DATA -->
       <script>
@@ -578,6 +581,19 @@ conn.close();
             <div class="row mt-4">
               <div class="col text-center">
                 <button type="button" class="btn btn-secondary" id="clickMe" style="justify-content: center;">Generate Matching</button>
+                <script>
+                document.getElementById("clickMe").addEventListener("click", function () {
+                      var temp = [];
+                      for (let i = 0; i < 20; i++) {
+                        temp = generateMatching(s_list, p_list, c_list, a_list, priority_list);
+                        if (temp.length >= matches.length)
+                          matches = temp.slice();
+                      }
+                      document.getElementById("matches").innerHTML = matches.length;
+                      document.getElementById("matches_table").innerHTML = update_matching_table();
+                      addListenersToMatches();
+                });
+                </script>
               </div>
             </div>
           </div>
@@ -647,8 +663,12 @@ conn.close();
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" id="apps_table" align="center" style="height:500px;overflow:auto;">
               Table showing all applications to go here.
+              <script>
+                document.getElementById("apps_table").innerHTML = update_apps_table();
+                addListenersToApps();
+              </script>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -687,10 +707,6 @@ conn.close();
             </div>
             <div class="modal-body" id="matches_table" align="center" style="height:500px;overflow:auto;">
               Table of all matches will go here.
-              <script>
-                document.getElementById("apps_table").innerHTML = update_apps_table();
-                addListenersToApps();
-              </script>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
