@@ -24,9 +24,12 @@
       <script type="text/javascript" src="./js/3D_Matching_Algorithm.js"></script>
       <script type="text/javascript" src="./js/tree.js"></script>
       <script type="text/javascript" src="./js/tables.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 
       <!-- TEMPORARY HARD CODED DATA -->
       <script>
@@ -582,17 +585,17 @@ conn.close();
               <div class="col text-center">
                 <button type="button" class="btn btn-secondary" id="clickMe" style="justify-content: center;">Generate Matching</button>
                 <script>
-                document.getElementById("clickMe").addEventListener("click", function () {
-                      var temp = [];
-                      for (let i = 0; i < 20; i++) {
-                        temp = generateMatching(s_list, p_list, c_list, a_list, priority_list);
-                        if (temp.length >= matches.length)
-                          matches = temp.slice();
-                      }
-                      document.getElementById("matches").innerHTML = matches.length;
-                      document.getElementById("matches_table").innerHTML = update_matching_table();
-                      addListenersToMatches();
-                });
+                  document.getElementById("clickMe").addEventListener("click", function () {
+                    var temp = [];
+                    for (let i = 0; i < 20; i++) {
+                      temp = generateMatching(s_list, p_list, c_list, a_list, priority_list);
+                      if (temp.length >= matches.length)
+                        matches = temp.slice();
+                    }
+                    document.getElementById("matches").innerHTML = matches.length;
+                    document.getElementById("matches_table").innerHTML = update_matching_table();
+                    addListenersToMatches();
+                  });
                 </script>
               </div>
             </div>
@@ -602,50 +605,103 @@ conn.close();
           <div class="col-sm-10">
             <div id="tree" class="card h-100">
               <div class="card-header text-right">
-                <button type="button" class="btn btn-outline-primary">
+                <button id="students_button" type="button" class="btn btn-outline-primary">
                   <i class="fas fa-users"></i> Students
                   <span class="badge badge-pill badge-primary" id="matches">
                     <script>
                       document.write(s_list.length);
                     </script>
                   </span>
+                  <script>
+                    document.getElementById("students_button").addEventListener("click", function () {
+                      treeData = generateDatabaseJSON(a_list, 0);
+                      var h = document.getElementById('tree').clientHeight,
+                        w = document.getElementById('tree').clientWidth,
+                        size = {
+                          height: h,
+                          width: w
+                        };
+                      var margin = {
+                        top: 10,
+                        right: 10,
+                        bottom: 100,
+                        left: 0
+                      };
+                      d3.selectAll("svg").remove();
+                      render_tree(treeData, size, margin);
+                    });
+                  </script>
                 </button>
-                <button type="button" class="btn btn-outline-info">
+                <button id="professors_button" type="button" class="btn btn-outline-info">
                   <i class="fas fa-users"></i> Professors
                   <span class="badge badge-pill badge-info" id="matches">
                     <script>
                       document.write(p_list.length);
                     </script>
                   </span>
+                  <script>
+                    document.getElementById("professors_button").addEventListener("click", function () {
+                      treeData = generateDatabaseJSON(a_list, 1);
+                      var h = document.getElementById('tree').clientHeight,
+                        w = document.getElementById('tree').clientWidth,
+                        size = {
+                          height: h,
+                          width: w
+                        };
+                      var margin = {
+                        top: 10,
+                        right: 10,
+                        bottom: 100,
+                        left: 0
+                      };
+                      d3.selectAll("svg").remove();
+                      render_tree(treeData, size, margin);
+                    });
+                  </script>
                 </button>
-                <button type="button" class="btn btn-outline-secondary">
+                <button id="courses_button" type="button" class="btn btn-outline-secondary">
                   <i class="fas fa-book"></i> Courses
                   <span class="badge badge-pill badge-secondary" id="matches">
                     <script>
                       document.write(c_list.length);
                     </script>
                   </span>
+                  <script>
+                    document.getElementById("courses_button").addEventListener("click", function () {
+                      treeData = generateDatabaseJSON(a_list, 2);
+                      var h = document.getElementById('tree').clientHeight,
+                        w = document.getElementById('tree').clientWidth,
+                        size = {
+                          height: h,
+                          width: w
+                        };
+                      var margin = {
+                        top: 10,
+                        right: 10,
+                        bottom: 100,
+                        left: 0
+                      };
+                      d3.selectAll("svg").remove();
+                      render_tree(treeData, size, margin);
+                    });
+                  </script>
                 </button>
               </div>
               <!-- TREE VISUALIZATION -->
               <script>
-                // DATA
                 treeData = generateDatabaseJSON(a_list, 0);
-
                 var h = document.getElementById('tree').clientHeight,
                   w = document.getElementById('tree').clientWidth,
                   size = {
                     height: h,
                     width: w
                   };
-
                 var margin = {
                   top: 10,
                   right: 10,
                   bottom: 100,
                   left: 0
                 };
-
                 render_tree(treeData, size, margin);
               </script>
             </div>
