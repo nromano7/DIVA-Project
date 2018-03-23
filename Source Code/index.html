@@ -588,7 +588,7 @@ conn.close();
         <!-- TREE CARD -->
         <div id="tree" class="card h-100">
           <div class="card-header d-flex">
-            <button id="students_button" type="button" class="btn btn-primary">
+            <button id="students_button" type="button" class="btn btn-primary m-1">
               <i class="fas fa-users"></i> Students
               <span class="badge badge-pill badge-primary" id="matches">
                 <script>
@@ -597,9 +597,9 @@ conn.close();
               </span>
               <script>
                 document.getElementById("students_button").addEventListener("click", function () {
-                  document.getElementById("students_button").setAttribute("class", "btn btn-primary")
-                  document.getElementById("professors_button").setAttribute("class", "btn btn-outline-info")
-                  document.getElementById("courses_button").setAttribute("class", "btn btn-outline-secondary")
+                  document.getElementById("students_button").setAttribute("class", "btn btn-primary m-1")
+                  document.getElementById("professors_button").setAttribute("class", "btn btn-outline-info m-1")
+                  document.getElementById("courses_button").setAttribute("class", "btn btn-outline-secondary m-1")
                   treeData = generateDatabaseJSON(a_list, 0);
                   var h = document.getElementById('tree').clientHeight,
                     w = document.getElementById('tree').clientWidth,
@@ -618,7 +618,7 @@ conn.close();
                 });
               </script>
             </button>
-            <button id="professors_button" type="button" class="btn btn-outline-info">
+            <button id="professors_button" type="button" class="btn btn-outline-info m-1">
               <i class="fas fa-users"></i> Professors
               <span class="badge badge-pill badge-info" id="matches">
                 <script>
@@ -627,9 +627,9 @@ conn.close();
               </span>
               <script>
                 document.getElementById("professors_button").addEventListener("click", function () {
-                  document.getElementById("students_button").setAttribute("class", "btn btn-outline-primary")
-                  document.getElementById("professors_button").setAttribute("class", "btn btn-info")
-                  document.getElementById("courses_button").setAttribute("class", "btn btn-outline-secondary")
+                  document.getElementById("students_button").setAttribute("class", "btn btn-outline-primary m-1")
+                  document.getElementById("professors_button").setAttribute("class", "btn btn-info m-1")
+                  document.getElementById("courses_button").setAttribute("class", "btn btn-outline-secondary m-1")
                   treeData = generateDatabaseJSON(a_list, 1);
                   var h = document.getElementById('tree').clientHeight,
                     w = document.getElementById('tree').clientWidth,
@@ -648,7 +648,7 @@ conn.close();
                 });
               </script>
             </button>
-            <button id="courses_button" type="button" class="btn btn-outline-secondary">
+            <button id="courses_button" type="button" class="btn btn-outline-secondary m-1">
               <i class="fas fa-book"></i> Courses
               <span class="badge badge-pill badge-secondary" id="matches">
                 <script>
@@ -657,9 +657,9 @@ conn.close();
               </span>
               <script>
                 document.getElementById("courses_button").addEventListener("click", function () {
-                  document.getElementById("students_button").setAttribute("class", "btn btn-outline-primary")
-                  document.getElementById("professors_button").setAttribute("class", "btn btn-outline-info")
-                  document.getElementById("courses_button").setAttribute("class", "btn btn-secondary")
+                  document.getElementById("students_button").setAttribute("class", "btn btn-outline-primary m-1")
+                  document.getElementById("professors_button").setAttribute("class", "btn btn-outline-info m-1")
+                  document.getElementById("courses_button").setAttribute("class", "btn btn-secondary m-1")
                   treeData = generateDatabaseJSON(a_list, 2);
                   var h = document.getElementById('tree').clientHeight,
                     w = document.getElementById('tree').clientWidth,
@@ -678,7 +678,7 @@ conn.close();
                 });
               </script>
             </button>
-            <button id="priority_button" type="button" class="btn btn-outline-success ml-auto" disabled>
+            <button id="priority_button" type="button" class="btn btn-outline-success ml-auto m-1" disabled>
               Add To Priority List
             </button>
           </div>
